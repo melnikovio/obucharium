@@ -9,4 +9,4 @@ Write simple math parser:
 Only with functions (without classes) and integers, sum, muplitply, divide, minus and ariphmetic priority.
 
 #### Remarks
-There is no limitations on eval or external libraries ¯\\_(ツ)_/¯
+There is no limitations on eval or external libraries ¯\\\_(ツ)\_/¯
