@@ -1,4 +1,4 @@
-﻿let expressions = ["1+2", "2+2*2", "1-6/2", "10/10-10*1000", "1324*1243456-6237/23333"];
+﻿let expressions: string[] = ["1+2", "2+2*2", "1-6/2", "10/10-10*1000", "1324*1243456-6237/23333", "1+2/0", "1--2/0"];
 
 for (let expression of expressions) {
     printResult(customCalculate(expression));
@@ -6,23 +6,23 @@ for (let expression of expressions) {
     printResult(calculateWithExtension(expression));
 }
 
-//Requires module or correct initialization
-var math;
+// requires module or correct initialization
+var math: any;
 function calculateWithExtension(expression: string): string {
-    const result = math.eval(expression);
+    const result: number = math.eval(expression);
 
     return `Calc with extension(mathjs): ${expression}=${result}\r\n`;
 }
 
 function calculateWithEval(expression: string): string {
-    const result = eval(expression);
+    const result: number = eval(expression);
 
     return `Calc with eval: ${expression}=${result}\r\n`;
 }
 
 function customCalculate(expression: string): string {
-    const expressionBySymbols = expression.split(/(\+|\-|\*|\/)/g);
-    const result = evaluate(expressionBySymbols);
+    const expressionBySymbols: string[] = expression.split(/(\+|\-|\*|\/)/g);
+    const result: number = evaluate(expressionBySymbols);
 
     return `Custom calc: ${expression}=${result}\r\n`;
 }
@@ -32,35 +32,38 @@ function evaluate(expressionBySymbols: string[]): number {
         return Number(expressionBySymbols[0]);
     }
 
-    let value = Number(expressionBySymbols[0]);
-    const operator = expressionBySymbols[1];
+    let value: number = Number(expressionBySymbols[0]);
+    const operator: string = expressionBySymbols[1];
 
     switch (operator) {
-    case "+": {
-        return value + evaluate(expressionBySymbols.slice(2, expressionBySymbols.length));
-    }
-    case "-": {
-        return value - evaluate(expressionBySymbols.slice(2, expressionBySymbols.length));
-    }
-    case "*": {
-        value = value * Number(expressionBySymbols[2]);
-        break;
-    }
-    case "/": {
-        value = value / Number(expressionBySymbols[2]);
-        break;
-    }
+        case "+": {
+            return value + evaluate(expressionBySymbols.slice(2, expressionBySymbols.length));
+        }
+        case "-": {
+            return value - evaluate(expressionBySymbols.slice(2, expressionBySymbols.length));
+        }
+        case "*": {
+            value = value * Number(expressionBySymbols[2]);
+            break;
+        }
+        case "/": {
+            value = value / Number(expressionBySymbols[2]);
+            break;
+        }
+
+        default:
+            break;
     }
 
-    const res = expressionBySymbols.slice(3, expressionBySymbols.length);
+    const res: string[] = expressionBySymbols.slice(3, expressionBySymbols.length);
     res.unshift(String(value));
     return evaluate(res);
 }
 
-function printResult(result: string) {
+function printResult(result: string): void {
     console.log(result);
 
-    const content = document.getElementById("content");
+    const content: HTMLElement = document.getElementById("content");
 
     content.innerText += result;
 }

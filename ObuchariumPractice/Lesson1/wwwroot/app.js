@@ -1,11 +1,11 @@
-var expressions = ["1+2", "2+2*2", "1-6/2", "10/10-10*1000", "1324*1243456-6237/23333"];
+var expressions = ["1+2", "2+2*2", "1-6/2", "10/10-10*1000", "1324*1243456-6237/23333", "1+2/0", "1--2/0"];
 for (var _i = 0, expressions_1 = expressions; _i < expressions_1.length; _i++) {
     var expression = expressions_1[_i];
     printResult(customCalculate(expression));
     printResult(calculateWithEval(expression));
     printResult(calculateWithExtension(expression));
 }
-//Requires module or correct initialization
+// requires module or correct initialization
 var math;
 function calculateWithExtension(expression) {
     var result = math.eval(expression);
@@ -41,6 +41,8 @@ function evaluate(expressionBySymbols) {
             value = value / Number(expressionBySymbols[2]);
             break;
         }
+        default:
+            break;
     }
     var res = expressionBySymbols.slice(3, expressionBySymbols.length);
     res.unshift(String(value));
@@ -51,4 +53,3 @@ function printResult(result) {
     var content = document.getElementById("content");
     content.innerText += result;
 }
-//# sourceMappingURL=app.js.map
