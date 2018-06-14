@@ -1,15 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-//import * as mathjs from "./Libs/mathjs";
-var mathjs;
+exports.__esModule = true;
+var math = require("mathjs");
 var ExtensionsCalculator = /** @class */ (function () {
     function ExtensionsCalculator() {
     }
     ExtensionsCalculator.prototype.calculate = function (expression) {
-        var result = mathjs.eval(expression);
+        var result = math.eval(expression);
         return "Calculator with extension(mathjs): " + expression + "=" + result + "\r\n";
     };
     return ExtensionsCalculator;
 }());
-exports.default = ExtensionsCalculator;
-//# sourceMappingURL=ExtensionsCalculator.js.map
+exports["default"] = ExtensionsCalculator;

@@ -1,9 +1,10 @@
+///<reference path=".././node_modules/@types/mathjs/index.d.ts" />
 import { default as ICalculator } from "./ICalculator";
-//import * as mathjs from "./Libs/mathjs";
-var mathjs: any;
+import * as math from "mathjs";
+
 export default class ExtensionsCalculator implements ICalculator {
     calculate(expression: string): string {
-        const result: number = mathjs.eval(expression);
+        const result: number = math.eval(expression);
         return `Calculator with extension(mathjs): ${expression}=${result}\r\n`;
     }
 }
