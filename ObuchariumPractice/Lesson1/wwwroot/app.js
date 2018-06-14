@@ -53,3 +53,4 @@ function printResult(result) {
     var content = document.getElementById("content");
     content.innerText += result;
 }
+//# sourceMappingURL=app.js.map
