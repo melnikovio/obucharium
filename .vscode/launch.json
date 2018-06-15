@@ -7,9 +7,15 @@
        {
            "type": "node",
            "request": "launch",
-           "name": "Launch Program",
+           "name": "Launch Lesson 2",
            "program": "${workspaceFolder}/ObuchariumPractice/Lesson2/wwwroot/app.js"
        },
+       {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Lesson 3",
+        "program": "${workspaceFolder}/ObuchariumPractice/Lesson3/wwwroot/app.js"
+        },
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
