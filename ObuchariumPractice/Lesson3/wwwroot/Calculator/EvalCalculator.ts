@@ -1,13 +1,16 @@
 import { default as ICalculator } from "./ICalculator";
-import {logClass, autoIncrementResult} from "../Logger/Logger";
+import {logClass, logMethod, incrementOnSet} from "../Logger/Logger";
 
 @logClass
 export default class EvalCalculator implements ICalculator {
-    @autoIncrementResult
+    @incrementOnSet
+    result: any;
+
+    @logMethod
     calculate(expression: string): string {
         try {
-            const result: number = eval(expression);
-            return String(result);
+            this.result = eval(expression);
+            return this.result;
         } catch {
             return "Calculator with eval: Eval error occuried";
         }

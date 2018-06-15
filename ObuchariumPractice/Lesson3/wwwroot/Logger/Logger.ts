@@ -26,7 +26,7 @@ export function logClass(target: any): any {
 }
 
 // this guys without comments becomes a real shit in support
-export function autoIncrementResult(target: any, key: any, descriptor: any): any {
+export function logMethod(target: any, key: any, descriptor: any): any {
     // save a reference to the original method this way we keep the values currently in the
     // descriptor and don't overwrite what another decorator might have done to the descriptor.
     if (descriptor === undefined) {
@@ -40,17 +40,42 @@ export function autoIncrementResult(target: any, key: any, descriptor: any): any
 
         // usage of original method here
         let result: any = originalMethod.call(this, expression);
-        console.log("Logger: Result from original calculate is: " + result);
+        console.log("Logger: Result from calculate is: " + result);
 
-        // increment result
-        if (!isNaN(result)) {
-          return Number(result) + 1;
-        }
-
-        // return result is NaN (error for example)
         return result;
     };
 
     // return edited descriptor as opposed to overwriting the descriptor
     return descriptor;
+}
+
+// this guys without comments becomes a real shit in support
+export function incrementOnSet(target: any, key: string): any {
+  // init property value
+  let _val: any;
+
+  // property getter
+  let getter: any = function (): any {
+    return _val;
+  };
+
+  // property setter
+  let setter: any = function (newVal: any): any {
+    console.log(`Logger: Original result from calculate is ${newVal}`);
+    let res: any = newVal;
+    // increment result
+    if (!isNaN(newVal)) {
+      res = Number(newVal) + 1;
+    }
+
+    // set result to value
+    _val = res;
+  };
+
+  // create new property with getter and setter
+  Object.defineProperty(target, key, {
+    get: getter,
+    set: setter
+  });
+
 }

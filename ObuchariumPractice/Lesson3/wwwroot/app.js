@@ -13,11 +13,14 @@ for (var _i = 0, expressions_1 = expressions; _i < expressions_1.length; _i++) {
     var expression = expressions_1[_i];
     var calculator = void 0;
     calculator = new calc.EvalCalculator();
-    printResult(expression, calculator.calculate(expression));
+    calculator.calculate(expression);
+    printResult(expression, calculator.result);
     calculator = new calc.ExtensionsCalculator();
-    printResult(expression, calculator.calculate(expression));
+    calculator.calculate(expression);
+    printResult(expression, calculator.result);
     calculator = new calc.CustomCalculator();
-    printResult(expression, calculator.calculate(expression));
+    calculator.calculate(expression);
+    printResult(expression, calculator.result);
 }
 function printResult(expression, result) {
     var printResult = "Calculating expression with autoincrement result: " + expression + "=" + result + "\r\n";

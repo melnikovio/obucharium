@@ -19,11 +19,14 @@ var ExtensionsCalculator = /** @class */ (function () {
     function ExtensionsCalculator() {
     }
     ExtensionsCalculator.prototype.calculate = function (expression) {
-        var result = math.eval(expression);
-        return String(result);
+        this.result = math.eval(expression);
+        return this.result;
     };
     __decorate([
-        Logger_1.autoIncrementResult
+        Logger_1.incrementOnSet
+    ], ExtensionsCalculator.prototype, "result", void 0);
+    __decorate([
+        Logger_1.logMethod
     ], ExtensionsCalculator.prototype, "calculate", null);
     ExtensionsCalculator = __decorate([
         Logger_1.logClass

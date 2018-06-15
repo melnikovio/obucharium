@@ -12,8 +12,8 @@ var CustomCalculator = /** @class */ (function () {
     }
     CustomCalculator.prototype.calculate = function (expression) {
         var expressionBySymbols = expression.split(/(\+|\-|\*|\/)/g);
-        var result = this.evaluate(expressionBySymbols);
-        return String(result);
+        this.result = String(this.evaluate(expressionBySymbols));
+        return this.result;
     };
     CustomCalculator.prototype.evaluate = function (expressionBySymbols) {
         if (expressionBySymbols.length === 1) {
@@ -44,7 +44,10 @@ var CustomCalculator = /** @class */ (function () {
         return this.evaluate(res);
     };
     __decorate([
-        Logger_1.autoIncrementResult
+        Logger_1.incrementOnSet
+    ], CustomCalculator.prototype, "result", void 0);
+    __decorate([
+        Logger_1.logMethod
     ], CustomCalculator.prototype, "calculate", null);
     CustomCalculator = __decorate([
         Logger_1.logClass

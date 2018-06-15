@@ -12,15 +12,18 @@ var EvalCalculator = /** @class */ (function () {
     }
     EvalCalculator.prototype.calculate = function (expression) {
         try {
-            var result = eval(expression);
-            return String(result);
+            this.result = eval(expression);
+            return this.result;
         }
         catch (_a) {
             return "Calculator with eval: Eval error occuried";
         }
     };
     __decorate([
-        Logger_1.autoIncrementResult
+        Logger_1.incrementOnSet
+    ], EvalCalculator.prototype, "result", void 0);
+    __decorate([
+        Logger_1.logMethod
     ], EvalCalculator.prototype, "calculate", null);
     EvalCalculator = __decorate([
         Logger_1.logClass

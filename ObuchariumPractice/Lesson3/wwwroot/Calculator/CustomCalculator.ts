@@ -1,13 +1,16 @@
 import { default as ICalculator } from "./ICalculator";
-import {logClass, autoIncrementResult} from "../Logger/Logger";
+import {logClass, logMethod, incrementOnSet} from "../Logger/Logger";
 
 @logClass
 export default class CustomCalculator implements ICalculator {
-    @autoIncrementResult
+    @incrementOnSet
+    result: any;
+
+    @logMethod
     calculate(expression: string): string {
         const expressionBySymbols: string[] = expression.split(/(\+|\-|\*|\/)/g);
-        const result: number = this.evaluate(expressionBySymbols);
-        return String(result);
+        this.result = String(this.evaluate(expressionBySymbols));
+        return this.result;
     }
 
     private evaluate(expressionBySymbols: string[]): number {

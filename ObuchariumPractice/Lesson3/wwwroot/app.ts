@@ -6,13 +6,16 @@ for (let expression of expressions) {
     let calculator: calc.ICalculator;
 
     calculator = new calc.EvalCalculator();
-    printResult(expression, calculator.calculate(expression));
+    calculator.calculate(expression);
+    printResult(expression, calculator.result);
 
     calculator = new calc.ExtensionsCalculator();
-    printResult(expression, calculator.calculate(expression));
+    calculator.calculate(expression);
+    printResult(expression, calculator.result);
 
     calculator = new calc.CustomCalculator();
-    printResult(expression, calculator.calculate(expression));
+    calculator.calculate(expression);
+    printResult(expression, calculator.result);
 }
 
 function printResult(expression: string, result: string): void {
