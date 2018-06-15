@@ -1,4 +1,4 @@
-// this guys withoit comments becomes a real shit in support
+// this guys without comments becomes a real shit in support
 export function logClass(target: any): any {
     // save a reference to the original constructor
     var originalConstructor: any = target;
@@ -25,7 +25,7 @@ export function logClass(target: any): any {
     return newConstructor;
 }
 
-// this guys withoit comments becomes a real shit in support
+// this guys without comments becomes a real shit in support
 export function autoIncrementResult(target: any, key: any, descriptor: any): any {
     // save a reference to the original method this way we keep the values currently in the
     // descriptor and don't overwrite what another decorator might have done to the descriptor.

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// this guys withoit comments becomes a real shit in support
+// this guys without comments becomes a real shit in support
 function logClass(target) {
     // save a reference to the original constructor
     var originalConstructor = target;
@@ -23,7 +23,7 @@ function logClass(target) {
     return newConstructor;
 }
 exports.logClass = logClass;
-// this guys withoit comments becomes a real shit in support
+// this guys without comments becomes a real shit in support
 function autoIncrementResult(target, key, descriptor) {
     // save a reference to the original method this way we keep the values currently in the
     // descriptor and don't overwrite what another decorator might have done to the descriptor.
