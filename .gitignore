@@ -9,3 +9,5 @@
 *.config
 /ObuchariumPractice/Lesson2/wwwroot/node_modules
 /ObuchariumPractice/Lesson3/wwwroot/node_modules
+/ObuchariumPractice/Lesson4/node_modules
+/ObuchariumPractice/Lesson4/phonebook/node_modules
