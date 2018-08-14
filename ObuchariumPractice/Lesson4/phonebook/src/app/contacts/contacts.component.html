@@ -2,10 +2,10 @@
 
 <div>
   <ul class="contacts">
-    <button (click)="onAdding()">Добавить</button>
     <li *ngFor="let contact of contacts" (click)="onSelect(contact)">
       <span class="badge">{{contact.name}}</span>; {{contact.number}}
     </li>
+    <button (click)="onAdding()">Добавить</button>
   </ul>
 </div>
 

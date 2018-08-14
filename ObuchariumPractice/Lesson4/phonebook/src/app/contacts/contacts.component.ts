@@ -17,6 +17,7 @@ export class ContactsComponent implements OnInit {
   newContact: Contact;
 
   onSelect(contact: Contact): void {
+    this.newContact = null;
     this.selectedContact = contact;
   }
 
