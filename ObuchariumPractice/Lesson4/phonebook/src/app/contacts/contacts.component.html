@@ -3,32 +3,12 @@
 <div>
   <ul class="contacts">
     <li *ngFor="let contact of contacts" (click)="onSelect(contact)">
-      <span class="badge">{{contact.name}}</span>; {{contact.number}}
+      <span class="name">{{contact.name | uppercase}}</span>{{contact.number}}
     </li>
-    <button (click)="onAdding()">Добавить</button>
   </ul>
+  <button (click)="onAdding()">Добавить новый контакт</button>
+  <button (click)="onRefresh()">Обновить список контактов</button>
 </div>
 
-<div *ngIf="newContact">
-    <h2>{{ newContact.name | uppercase }} Details</h2>
-    <div>
-      <label>name:
-        <input [(ngModel)]="newContact.name" placeholder="name">
-        <input [(ngModel)]="newContact.number" placeholder="number">
-        <input [(ngModel)]="newContact.email" placeholder="email">
-      </label>
-      <button (click)="onAdd(newContact)">Сохранить</button>
-    </div>
-</div>
-
-<div *ngIf="selectedContact">
-    <h2>{{ selectedContact.name | uppercase }} Details</h2>
-    <div>
-      <label>name:
-        <input [(ngModel)]="selectedContact.name" placeholder="name">
-        <input [(ngModel)]="selectedContact.number" placeholder="number">
-        <input [(ngModel)]="selectedContact.email" placeholder="email">
-      </label>
-      <button (click)="onDelete(selectedContact)">Удалить</button>
-    </div>
-</div>
+<app-contact-detail [contact]="selectedContact"></app-contact-detail>
+<app-contact-detail [contact]="newContact"></app-contact-detail>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../contact';
-import { CONTACTS } from '../mock-contacts';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,23 +8,25 @@ import { CONTACTS } from '../mock-contacts';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-
-  contact = CONTACTS[0];
-
-  contacts = CONTACTS;
+  contacts: Contact[];
 
   selectedContact: Contact;
   newContact: Contact;
 
+  constructor(private contactService: ContactService) { }
+
+  ngOnInit() {
+    this.getContacts();
+  }
+
+  getContacts(): void {
+    this.contactService.getContacts()
+      .subscribe(contacts => this.contacts = contacts);
+  }
+
   onSelect(contact: Contact): void {
     this.newContact = null;
     this.selectedContact = contact;
-  }
-
-  onDelete(contact: Contact): void {
-    const index = this.contacts.indexOf(contact);
-    this.contacts.splice(index, 1);
-    this.selectedContact = null;
   }
 
   onAdding(): void {
@@ -32,14 +34,7 @@ export class ContactsComponent implements OnInit {
     this.newContact = new Contact();
   }
 
-  onAdd(contact: Contact): void {
-    this.contacts.push(contact);
-    this.newContact = null;
+  onRefresh(): void {
+    this.getContacts();
   }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

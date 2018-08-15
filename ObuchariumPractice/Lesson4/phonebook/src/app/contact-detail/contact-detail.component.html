@@ -1,0 +1,24 @@
+<div *ngIf="contact">
+  <h2>{{ contact.name | uppercase }} Details</h2>
+  <div>
+    <label>name:
+      <input [(ngModel)]="contact.name" placeholder="name">
+      <input [(ngModel)]="contact.number" placeholder="number">
+      <input [(ngModel)]="contact.email" placeholder="email">
+    </label>
+    <button (click)="onDelete(contact)">Удалить</button>
+    <button (click)="onAdd(contact)">Сохранить</button>
+  </div>
+</div>
+
+<!-- <div *ngIf="newContact">
+  <h2>{{ newContact.name | uppercase }} Details</h2>
+  <div>
+    <label>name:
+      <input [(ngModel)]="newContact.name" placeholder="name">
+      <input [(ngModel)]="newContact.number" placeholder="number">
+      <input [(ngModel)]="newContact.email" placeholder="email">
+    </label>
+    <button (click)="onAdd(newContact)">Сохранить</button>
+  </div>
+</div> -->
