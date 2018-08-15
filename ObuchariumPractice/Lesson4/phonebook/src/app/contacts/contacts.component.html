@@ -5,6 +5,7 @@
     <li *ngFor="let contact of contacts" (click)="onSelect(contact)">
       <span class="name">{{contact.name | uppercase}}</span>{{contact.number}}
     </li>
+    <button (click)="onAdding()">Добавить</button>
   </ul>
   <button (click)="onAdding()">Добавить новый контакт</button>
   <button (click)="onRefresh()">Обновить список контактов</button>

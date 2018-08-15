@@ -12,6 +12,7 @@ C:\Users\IMelnikov\source\repos\Contacts.Server.Api\Contacts.Server.Api\obj\Debu
 C:\Users\IMelnikov\source\repos\Contacts.Server.Api\Contacts.Server.Api\obj\Debug\netcoreapp2.1\Contacts.Server.Api.RazorTargetAssemblyInfo.cache
 C:\Users\IMelnikov\source\repos\Contacts.Server.Api\Contacts.Server.Api\obj\Debug\netcoreapp2.1\Contacts.Server.Api.dll
 C:\Users\IMelnikov\source\repos\Contacts.Server.Api\Contacts.Server.Api\obj\Debug\netcoreapp2.1\Contacts.Server.Api.pdb
+<<<<<<< HEAD
 C:\source\obucharium\obucharium\ObuchariumPractice\Lesson4\Contacts.Server.Api\Contacts.Server.Api\bin\Debug\netcoreapp2.1\Contacts.Server.Api.deps.json
 C:\source\obucharium\obucharium\ObuchariumPractice\Lesson4\Contacts.Server.Api\Contacts.Server.Api\bin\Debug\netcoreapp2.1\Contacts.Server.Api.runtimeconfig.json
 C:\source\obucharium\obucharium\ObuchariumPractice\Lesson4\Contacts.Server.Api\Contacts.Server.Api\bin\Debug\netcoreapp2.1\Contacts.Server.Api.runtimeconfig.dev.json
@@ -26,3 +27,5 @@ C:\source\obucharium\obucharium\ObuchariumPractice\Lesson4\Contacts.Server.Api\C
 C:\source\obucharium\obucharium\ObuchariumPractice\Lesson4\Contacts.Server.Api\Contacts.Server.Api\obj\Debug\netcoreapp2.1\Contacts.Server.Api.RazorTargetAssemblyInfo.cache
 C:\source\obucharium\obucharium\ObuchariumPractice\Lesson4\Contacts.Server.Api\Contacts.Server.Api\obj\Debug\netcoreapp2.1\Contacts.Server.Api.dll
 C:\source\obucharium\obucharium\ObuchariumPractice\Lesson4\Contacts.Server.Api\Contacts.Server.Api\obj\Debug\netcoreapp2.1\Contacts.Server.Api.pdb
+=======
+>>>>>>> 1e9d6a62e710f4049083472da08b2f5f2580d802
