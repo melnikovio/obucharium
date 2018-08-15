@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-contact-detail',
@@ -10,19 +12,32 @@ import { ContactService } from '../contact.service';
 export class ContactDetailComponent implements OnInit {
   @Input() contact: Contact;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private route: ActivatedRoute,
+    private contactService: ContactService,
+    private location: Location) { }
 
   ngOnInit() {
+    this.getContact();
+  }
+
+  getContact(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.contactService.getContact(id)
+      .subscribe(contact => this.contact = contact);
   }
 
   onAdd(value: Contact): void {
     this.contactService.addContact(value);
-    this.clearForm();
+    this.goBack();
   }
 
   onDelete(value: Contact): void {
     this.contactService.deleteContact(value);
-    this.clearForm();
+    this.goBack();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   private clearForm(): void {

@@ -16,6 +16,11 @@ export class ContactService {
     return of(CONTACTS);
   }
 
+  getContact(id: number): Observable<Contact> {
+    this.messageService.add(`ContactsService: fetched contact id=${id}`);
+    return of(CONTACTS.find(contact => contact.id === id));
+  }
+
   addContact(contact: Contact) {
     CONTACTS.push(contact);
     this.messageService.add('ContactsService: contact added');

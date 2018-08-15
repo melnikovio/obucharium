@@ -13,14 +13,7 @@ export class ContactsComponent implements OnInit {
   selectedContact: Contact;
   newContact: Contact;
 
-<<<<<<< HEAD
   constructor(private contactService: ContactService) { }
-=======
-  onSelect(contact: Contact): void {
-    this.newContact = null;
-    this.selectedContact = contact;
-  }
->>>>>>> 1e9d6a62e710f4049083472da08b2f5f2580d802
 
   ngOnInit() {
     this.getContacts();
@@ -31,10 +24,10 @@ export class ContactsComponent implements OnInit {
       .subscribe(contacts => this.contacts = contacts);
   }
 
-  onSelect(contact: Contact): void {
-    this.newContact = null;
-    this.selectedContact = contact;
-  }
+  // onSelect(contact: Contact): void {
+  //   this.newContact = null;
+  //   this.selectedContact = contact;
+  // }
 
   onAdding(): void {
     this.selectedContact = null;

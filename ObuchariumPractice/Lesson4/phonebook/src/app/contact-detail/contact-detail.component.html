@@ -1,5 +1,6 @@
 <div *ngIf="contact">
   <h2>{{ contact.name | uppercase }} Details</h2>
+  <button (click)="goBack()">Назад</button>
   <div>
     <label>name:
       <input [(ngModel)]="contact.name" placeholder="name">

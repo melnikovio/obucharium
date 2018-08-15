@@ -1,15 +1,13 @@
-<h2>My Contacts</h2>
-
 <div>
   <ul class="contacts">
-    <li *ngFor="let contact of contacts" (click)="onSelect(contact)">
-      <span class="name">{{contact.name | uppercase}}</span>{{contact.number}}
+    <li *ngFor="let contact of contacts">
+        <a routerLink="/detail/{{contact.id}}">
+          <span class="name">{{contact.name | uppercase}}</span>{{contact.number}}
+        </a>
     </li>
-    <button (click)="onAdding()">Добавить</button>
   </ul>
   <button (click)="onAdding()">Добавить новый контакт</button>
   <button (click)="onRefresh()">Обновить список контактов</button>
 </div>
 
-<app-contact-detail [contact]="selectedContact"></app-contact-detail>
 <app-contact-detail [contact]="newContact"></app-contact-detail>

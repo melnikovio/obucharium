@@ -13690,19 +13690,12 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\source\\obucharium\\obucharium\\ObuchariumPractice\\Lesson4\\Contacts.Server.Api\\Contacts.Server.Api\\Contacts.Server.Api.csproj",
       "projectName": "Contacts.Server.Api",
       "projectPath": "C:\\source\\obucharium\\obucharium\\ObuchariumPractice\\Lesson4\\Contacts.Server.Api\\Contacts.Server.Api\\Contacts.Server.Api.csproj",
       "packagesPath": "C:\\Users\\IMelnikov\\.nuget\\packages\\",
       "outputPath": "C:\\source\\obucharium\\obucharium\\ObuchariumPractice\\Lesson4\\Contacts.Server.Api\\Contacts.Server.Api\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\IMelnikov\\source\\repos\\Contacts.Server.Api\\Contacts.Server.Api\\Contacts.Server.Api.csproj",
-      "projectName": "Contacts.Server.Api",
-      "projectPath": "C:\\Users\\IMelnikov\\source\\repos\\Contacts.Server.Api\\Contacts.Server.Api\\Contacts.Server.Api.csproj",
-      "packagesPath": "C:\\Users\\IMelnikov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IMelnikov\\source\\repos\\Contacts.Server.Api\\Contacts.Server.Api\\obj\\",
->>>>>>> 1e9d6a62e710f4049083472da08b2f5f2580d802
+
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
