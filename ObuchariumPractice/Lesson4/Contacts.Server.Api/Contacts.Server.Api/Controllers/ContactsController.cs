@@ -2,6 +2,7 @@
 using System.Linq;
 using Contacts.Server.Api.Context;
 using Contacts.Server.Api.Model;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Contacts.Server.Api.Controllers
@@ -10,6 +11,7 @@ namespace Contacts.Server.Api.Controllers
     /// Контакты
     /// </summary>
     [Route("api/contacts")]
+    [EnableCors("CustomPolicy")]
     public class ContactsController : Controller
     {
         private readonly ContactsContext _context;
@@ -58,21 +60,19 @@ namespace Contacts.Server.Api.Controllers
         [HttpPost]
         public void Post([FromBody]Contact value)
         {
-            _context.Add(new Contact { Name = value.Name, Phone = value.Phone});
+            _context.Add(new Contact { Name = value.Name, Phone = value.Phone, Email = value.Email});
             _context.SaveChanges();
         }
 
         /// <summary>
         /// Обновить контакт
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="value"></param>
-        [HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
-        public IActionResult Put(int id, [FromBody]Contact value)
+        public IActionResult Put([FromBody]Contact value)
         {
-            var contact = _context.Contacts.FirstOrDefault(c => c.Id == id);
+            var contact = _context.Contacts.FirstOrDefault(c => c.Id == value.Id);
             if (contact == null)
                 return NotFound();
 

@@ -34,11 +34,10 @@
             </summary>
             <param name="value"></param>
         </member>
-        <member name="M:Contacts.Server.Api.Controllers.ContactsController.Put(System.Int32,Contacts.Server.Api.Model.Contact)">
+        <member name="M:Contacts.Server.Api.Controllers.ContactsController.Put(Contacts.Server.Api.Model.Contact)">
             <summary>
             Обновить контакт
             </summary>
-            <param name="id"></param>
             <param name="value"></param>
         </member>
         <member name="M:Contacts.Server.Api.Controllers.ContactsController.Delete(System.Int32)">

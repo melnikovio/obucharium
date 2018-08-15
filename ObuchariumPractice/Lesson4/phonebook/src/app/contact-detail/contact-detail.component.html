@@ -4,11 +4,12 @@
   <div>
     <label>name:
       <input [(ngModel)]="contact.name" placeholder="name">
-      <input [(ngModel)]="contact.number" placeholder="number">
+      <input [(ngModel)]="contact.phone" placeholder="number">
       <input [(ngModel)]="contact.email" placeholder="email">
     </label>
     <button (click)="onDelete(contact)">Удалить</button>
-    <button (click)="onAdd(contact)">Сохранить</button>
+    <button *ngIf="!contact.id" (click)="onAdd(contact)">Сохранить</button>
+    <button *ngIf="contact.id" (click)="onUpdate(contact)">Обновить</button>
   </div>
 </div>
 

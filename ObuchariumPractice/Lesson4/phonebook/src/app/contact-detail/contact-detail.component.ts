@@ -27,20 +27,21 @@ export class ContactDetailComponent implements OnInit {
   }
 
   onAdd(value: Contact): void {
-    this.contactService.addContact(value);
+    this.contactService.addContact(value).subscribe();
+    this.goBack();
+  }
+
+  onUpdate(value: Contact): void {
+    this.contactService.updateContact(value).subscribe();
     this.goBack();
   }
 
   onDelete(value: Contact): void {
-    this.contactService.deleteContact(value);
+    this.contactService.deleteContact(value).subscribe();
     this.goBack();
   }
 
   goBack(): void {
     this.location.back();
-  }
-
-  private clearForm(): void {
-    this.contact = null;
   }
 }
